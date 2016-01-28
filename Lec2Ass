@@ -1,0 +1,19 @@
+START
+
+OUTPUT prompt to load data
+
+INPUT data to variable "names"
+
+BEGIN
+
+LOOP
+IF names begins with letter = 'A'
+THEN accept letter and print
+
+IF names begins with letter != 'A'
+THEN skip until all other letters have been scanned
+THEN proceed to next letter in alphabet
+
+DISPLAY names until reach letter = 'Z'
+
+END
