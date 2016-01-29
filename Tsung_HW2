@@ -1,4 +1,3 @@
-In [267]:
 #Question 1: Define a 'fib' that takes a number, 'n', as a parameter and prints all the Fib numbers less than 'n'
 
 def fib(n): #defines the fib function
@@ -12,24 +11,7 @@ def fib(n): #defines the fib function
         #b = x == a+b as b becomes equal to the function
     
 fib(1000) #prints all the Fibonacci numbers less than 'n' = 1000 to the screen 
-0
-1
-1
-2
-3
-5
-8
-13
-21
-34
-55
-89
-144
-233
-377
-610
-987
-In [268]:
+
 #Question 2: Define a function mymax() that takes two numbers as arguments and returns the largest of them. 
 #Use the if-then-else construct
 
@@ -41,13 +23,7 @@ def mymax(a,b): #function that takes two numbers as arguments
         return (b) #you know b is greater, so display b
         
 mymax(23,32) #when b is greater
-Out[268]:
-32
-In [269]:
-mymax (55,33) #when a is greater
-Out[269]:
-55
-In [270]:
+
 #Question 3: Define a function max_of_three() that takes three numbers and returns the largest
 
 def max_of_three (a,b,c): #compares a to b, a to c, and b to c
@@ -59,22 +35,8 @@ def max_of_three (a,b,c): #compares a to b, a to c, and b to c
     else: #otherwise
         return (c) #return c
         
-max_of_three(33,55,3) #returns the largest value with b as the greatest
-Out[270]:
-55
-In [271]:
-max_of_three(77,55,33) #when a is greatest
-Out[271]:
-77
-In [272]:
-max_of_three(33,55,73) #when c is greatest
-Out[272]:
-73
-In [273]:
-max_of_three(33,55,55) #with a tie
-Out[273]:
-55
-In [317]:
+max_of_three(33,55,3) 
+
 #Question 4: Define a function mylen() that computes length of a list or string
 
 def mylen(string): #function takes string 
@@ -85,9 +47,7 @@ def mylen(string): #function takes string
     return (length)
 
 mylen('Georgetown')
-Out[317]:
-10
-In [275]:
+
 #Question 5: Write a function that takes a character and returns 'True' if vowel, 'False' if otherwise
 
 def letter(alphabet): #defines the function
@@ -100,17 +60,7 @@ def letter(alphabet): #defines the function
         return False #it will return False
     
 letter("G") #testing the function with the best letter
-Out[275]:
-False
-In [276]:
-letter ("E") #testing the function with a vowel
-Out[276]:
-True
-In [277]:
-letter ("Y") #testing function with Y, sometimes a vowel and sometimes a consonant
-Out[277]:
-'Sometimes'
-In [318]:
+
 #Question 6: Write a function translate() that will translate a text into "rovarspraket"
 #double every consonant and place an occurrence of "o" in between
 #EX: "this is fun" returns the string "tothohisos isos fofunon"
@@ -126,13 +76,7 @@ def translate(x): #defines the function translate()
     return (letter) #returns the letter(s), letter-by-letter
     
 translate("Umbrella") #translating Umbrella to test out case-sensitivity in vowels
-Out[318]:
-'Umombobrorelollola'
-In [319]:
-translate ("this is fun") #translating the example phrase
-Out[319]:
-'tothohisos o isos o fofunon'
-In [320]:
+
 #Question 7, Part 1: Define a function sum() that sums all numbers in a list of numbers
 
 def sum(numbers): #defining the additive function
@@ -142,9 +86,7 @@ def sum(numbers): #defining the additive function
     return x #x will then be returned
 
 sum([1,2,3,4])  #testing the addition of the list of numbers of 1,2,3 and 4
-Out[320]:
-10
-In [321]:
+
 #Question 7, Part 2: Define a function multiply() that multiplies all numbers in a list of numbers
 
 def multiply (nums):
@@ -154,9 +96,7 @@ def multiply (nums):
     return mult #returns the solution
 
 multiply ([1,2,3,4]) #testing multiplication of the list of numbers 1-4
-Out[321]:
-24
-In [322]:
+
 #Question 8: Define a function reverse() that computes the reversal of a string
 #EX: reverse ("I am testing") to return "gnitset ma I"
 
@@ -168,9 +108,7 @@ def reverse (string):
     return word #returns the new word
 
 reverse("I am testing")
-Out[322]:
-'gnitset ma I'
-In [283]:
+
 #Question 9: Define a function is_palindrome() that recognizes words that look the same written backwards
 #EX: radar is a palindrome; should return True
 
@@ -181,14 +119,8 @@ def is_palindrome(word): #this solution inspired from stackoverflow with the [be
     else: #otherwise, if it is not a palindrome
         return (False) #returns 'False' because word is not a palindrome
         
-is_palindrome("Georgetown") #tests non-palindrome
-Out[283]:
-False
-In [284]:
 is_palindrome ("radar") #tests palindrome
-Out[284]:
-True
-In [285]:
+
 #Question 10: Write a function is_member() that takes a value x and a list of values a;
 #returns True if x is a member of a, False otherwise
 
@@ -200,17 +132,7 @@ def is_member(value_x,list_a): #defining the function
         return (False) #returns False
     
 is_member('G', 'Gerhard') #testing with letters and words
-Out[285]:
-True
-In [286]:
-is_member ('G', 'Pilcher') #testing for False"
-Out[286]:
-False
-In [287]:
-is_member (55, [33,55,3]) #using numbers this time
-Out[287]:
-True
-In [308]:
+
 #Question 11: Define a function overlapping() that takes two lists 
 #returns True if they have at least one member in common, False otherwise
 #May use is_member() function or in operator but should write it using two nested for-loops
@@ -225,13 +147,7 @@ def overlapping(list_1, list_2): #defining the function
                 return (False) #returns False if no commonality between lists
 
 overlapping([1,3,5,7],[1,2,3,4,5]) #testing True
-Out[308]:
-True
-In [309]:
-overlapping([2,4,6,8],[1,3,5,7]) #testing False"
-Out[309]:
-False
-In [311]:
+
 #Question 12: Define a function generate_n_chars() that takes an integer n and a character c and returns a string
 #n characters long, consisting only of c:s
 #EX: generate_n_chars(5,"x") returns string "xxxxx"
@@ -243,12 +159,4 @@ def generate_n_chars(n,c):
                                               #loops for an integer n within the range from 0 to n
     return (string) #returns the string of characters for the amount of integers
 
-generate_n_chars(5, "G") 
-Out[311]:
-'GGGGG'
-In [312]:
-generate_n_chars(10,"HA") #when you find something really funny
-Out[312]:
-'HAHAHAHAHAHAHAHAHAHA'
-In [ ]:
- 
+generate_n_chars(10,"HA") #when you find something really funny, you laugh:
