@@ -1,5 +1,7 @@
 #Question 1: Define a 'fib' that takes a number, 'n', as a parameter and prints all the Fib numbers less than 'n'
 
+## You need to add header documentation using doc strings.
+
 def fib(n): #defines the fib function
     
     a,b = 0,1 #initializing a to 0 and b to 1 as the first two values in the sequence
@@ -20,7 +22,7 @@ def mymax(a,b): #function that takes two numbers as arguments
     if a >= b: #if a is greater than or equal to b
         return (a) #then display a
     else: #otherwise,
-        return (b) #you know b is greater, so display b
+        return (b) #you know b is greater, so return b
         
 mymax(23,32) #when b is greater
 
@@ -50,20 +52,24 @@ mylen('Georgetown')
 
 #Question 5: Write a function that takes a character and returns 'True' if vowel, 'False' if otherwise
 
-def letter(alphabet): #defines the function
-    
-    while alphabet in "Yy": #Y and y are an exception
-        return "Sometimes" #Y can sometimes be a vowel
+def vowel(alphabet): #defines the function
+
+    ## This logic is not the best way to code this section.
+    # while alphabet in "Yy": #Y and y are an exception
+    #     return "Sometimes" #Y can sometimes be a vowel
+    # Great you checked upper and lower case
     if alphabet in "AaEeIiOoUu": #if the alphabetical letter is a vowel
         return True #then return True
     else: #Otherwise
         return False #it will return False
     
-letter("G") #testing the function with the best letter
+# letter("G") #testing the function with the best letter
 
 #Question 6: Write a function translate() that will translate a text into "rovarspraket"
 #double every consonant and place an occurrence of "o" in between
 #EX: "this is fun" returns the string "tothohisos isos fofunon"
+
+## Blanks should be treated like vowels.
 
 def translate(x): #defines the function translate()
     
@@ -159,4 +165,66 @@ def generate_n_chars(n,c):
                                               #loops for an integer n within the range from 0 to n
     return (string) #returns the string of characters for the amount of integers
 
+## This is a 'funny' test case - =D
 generate_n_chars(10,"HA") #when you find something really funny, you laugh:
+
+##TEST CASES
+
+print('#1\n')
+fib(500)
+print('\n')
+
+print('#2\n')
+print(mymax(45,987), '\n')
+
+print('#3\n')
+print(max_of_three(3,4,5),'\n')
+
+print('#4\n')
+print(mylen('Gerhard'))
+print(mylen([1,2,3,4,5,6,7]))
+print('\n')
+
+print('#5\n')
+print(vowel('e'))
+print(vowel('H'))
+print('\n')
+
+print('#6\n')
+print(translate("this is fun"))
+print(translate('aeiou'))
+print(translate('YYYYYYY'))
+print(translate("mmmmmm"))
+print('\n')
+
+print('#7\n')
+print(sum([1,2,3,4,5]))
+print('\n')
+
+print('#8\n')
+print(multiply([0,1,2,3]))
+print(multiply([1,2,3,4]))
+print('\n')
+
+print('#9\n')
+print(reverse("gnitset ma I"))
+print('\n')
+
+print('#10\n')
+print(is_palindrome('radar'))
+print(is_palindrome('Gerhard'))
+print('\n')
+
+print('#11\n')
+print(is_member('dog', ['cat', 'dog', 'zebra']))
+print(is_member(3, [1,2,3,4]))
+print(is_member(3, [5,6,7]))
+print('\n')
+
+print('#12\n')
+print(overlapping([1,2,3], [3,4,5]))
+print(overlapping([1,2,3], [6,4,5]))
+print('\n')
+
+print('#13\n')
+print(generate_n_chars(7, 'g'))
