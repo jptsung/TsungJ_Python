@@ -3,13 +3,16 @@
 #EX: histogram([4, 9, 7])
 
 """Prints a histogram using a for loop, checking the numbers over and over and printing out using an asterik"""
-
+## docstrings need to be inside the function for help to work properly - see my example in histogram
 def histogram (list): #defines a histogram
+    """
+    Prints a histogram using a for loop, checking the numbers over and over and printing out using an asterik
+    """
     for n in range(0, len(list)): #for the number in the range from 0
         print ('*' * list[n]) #prints out the * multiplied by the number n
     return (list) #returns the list of numbers used
 
-histogram([4,9,7]) #prints histogram
+#histogram([4,9,7]) #prints histogram
 
 #Question 2: Write a function max_in_list() that takes a list of numbers and returns the largest one
 
@@ -22,7 +25,7 @@ def max_in_list(list): #defines the function max_in_list
             max = n #loops through and replaces max into a new value if n is greater than max
     return max #returns largest value
 
-max_in_list([55,342,3,1])
+#max_in_list([55,342,3,1])
 
 #Question 3: Write function that maps a list of words into a list of integers representing lengths of words
 
@@ -34,7 +37,7 @@ def words(list):
         integer.append(len(string)) #append function to add integers in the string of letters
     return (integer) #returns the integer that coincides with the number of letters in the word
 
-words(['Georgetown','University','Hoya', 'Saxa'])
+# words(['Georgetown','University','Hoya', 'Saxa'])
 
 #Question 4: Write a function find_longest_word() that takes a list of words and returns the length of the longest one.
 
@@ -43,19 +46,20 @@ words(['Georgetown','University','Hoya', 'Saxa'])
 def find_longest_word(list): #defines a function that finds the longest word
     return max_in_list(words(list)) #returns by looping the Q3 function which found the integers representing word length
                                     #loops within the max_in_list function to find the greatest number among the list produced
-find_longest_word(['Georgetown','University','Hoya', 'Saxa']) 
+# find_longest_word(['Georgetown','University','Hoya', 'Saxa'])
     
 
 #Question 5: Write a function filter_long_words() that takes a list of words and an integer n
 
 """Function returns the list of words that are longer than n"""
 
+## Should only return words longer than n
 def filter_long_words(wordlist, n): #defines the function
     listofwords = []
     for words in wordlist: #for loop generates length of words and compares to n
         if len(words) >= n:listofwords.append(words) #selects words with length greater than n
     return (listofwords)
-filter_long_words (['Georgetown','University','Hoya', 'Saxa'],5)
+# filter_long_words (['Georgetown','University','Hoya', 'Saxa'],5)
 
 #Question 6: Write a version of a palindrome recognizer
 
@@ -70,7 +74,7 @@ def palindrome(phrase): #defines function palindrome for a phrase
         return (True) #returns 'True' if the word is the same as it is reversed
     else: #otherwise, if it is not a palindrome
         return (False) #returns 'False' because word is not a palindrome
-palindrome("Lisa Bonet ate no basil")
+# palindrome("Lisa Bonet ate no basil")
 
 #Question 7: A pangram is a sentence that contains all the letters of the English alphabet at least once...
 
@@ -95,7 +99,7 @@ def pangram(sentence):
         else:
             return False #returns False if not a pangram
         
-pangram ("The quick brown fox jumps over the lazy dog")
+# pangram ("The quick brown fox jumps over the lazy dog")
 
 #Question 8: write a Python program capable of generating all the verses of the song
 
@@ -108,7 +112,7 @@ def verses(n): #defines the function of n as a number
         print("Take one down, pass it around, "+ str(x-1) +" bottles of Coke on the wall.")
         print (" ") #prints a space between each verse
          
-verses(99) #verse starts at 99 bottles
+# verses(99) #verse starts at 99 bottles
 
 #Question 9: Represent a small bilingual lexicon as a Python dictionary
 
@@ -130,7 +134,7 @@ def translate(list):
             translation.append(dictionary[word]) #using the append function to append a passed word into the existing list
     return translation
 
-translate(["merry", "christmas", "and", "happy", "new", "year"]) #testing the sentence
+# translate(["merry", "christmas", "and", "happy", "new", "year"]) #testing the sentence
 
 #Question 10: Write a function char_freq() that takes a string and builds a frequency listing of characters 
 
@@ -143,7 +147,7 @@ def char_freq(string):
     for n in string: dictionary[n] = dictionary[n] + 1 #for every n character in the string, count total appearances
     return (dictionary) #returns the dictionary frequency
 
-char_freq("abbabcbdbabdbdbabababcbcbab")
+# char_freq("abbabcbdbabdbdbabababcbcbab")
 
 #Question 11: Caesar Cipher
 
@@ -165,7 +169,7 @@ def cipher(string): #defines the function cipher
             translation = translation + i #if not in list, then add character without the change
     return translation
 
-cipher("Pnrfne pvcure? V zhpu cersre Pnrfne fnynq!")
+# cipher("Pnrfne pvcure? V zhpu cersre Pnrfne fnynq!")
 
 #Question 12: Define a simple "spelling correction" function correct() that takes a string
 
@@ -178,7 +182,7 @@ def correct(string): #defines function correct()
     string = re.sub(r'\.([^ ])', r'. \1', string) #inserts an extra space after a period if the period is followed by letter
     return (string) #returns the corrected string 
 
-correct("This       is very funny and  cool.Indeed!")
+# correct("This       is very funny and  cool.Indeed!")
 
 #Question 13: Define a function make_3sg_form() which returns third person singular form
 
@@ -195,7 +199,7 @@ def make_3sg_form(verb): #defines function
     else:
         return re.sub('$', 's', verb) #all other endings end with an 's'
 
-make_3sg_form("brush")
+# make_3sg_form("brush")
 
 #Question 14: Define a function make_ing_form() 
 
@@ -207,7 +211,7 @@ make_3sg_form("brush")
 #By default just add ing
 
 import re
-
+## This doesn't work in all cases, see my test cases below - Prof G
 def make_ing_form(verb): 
     while verb.endswith("e") and (verb[-2].endswith("e") or len(verb) == 2): #for verb exceptions
         return verb + "ing"  #don't drop anything, just add "ing"
@@ -220,4 +224,42 @@ def make_ing_form(verb):
     else: #otherwise, if just a consonant
         return re.sub("$", "ing", verb) #returns verb with "ing" if just default"
 
-make_ing_form("dream")
+# make_ing_form("dream")
+
+##Test Cases
+help(histogram)
+help(make_ing_form)
+
+print("1 Histogram ", histogram([1,2,3,5,6,7,6,5,4,3,2,1]), '\n')
+
+print("2 Max in List 77 ", max_in_list([1,2,3,77,4,5,6,7]), '\n')
+
+print("3 word to length map 3,5,7,4 ", words(['dog', 'snake', 'dolphin', 'cats']), '\n')
+
+print("4 Longest word 7 ", find_longest_word(['dog', 'snake', 'dolphin', 'cats']), '\n')
+
+print("5 filter long words snake, dolphin ", filter_long_words(['dog', 'snake', 'dolphin', 'cats'],4), '\n')
+
+print("6 Palindrome phrase TRUE ", palindrome("Go hang a salami I'm a lasagna hog."), '\n')
+
+print("7 Pangram TRUE ", pangram("The quick brown fox jumps over the lazy dog."), '\n')
+
+print("8 Cokes \n", verses(9))
+
+print("9 Translating to Swedish ['god', 'jul', 'gott'] ", translate(['merry', 'christmas', 'happy']), '\n')
+
+print("10 Char Freq {'a': 7, 'c': 3, 'b': 14, 'e': 2, 'd': 3, 'g': 7, 'f': 3} ", char_freq("agbbabgcbdbabdgbdbabageebabcbgcbffgfabg"), '\n')
+
+print("11 Decoder Caesar cipher? I much prefer Caesar salad!", cipher("Pnrfne pvcure? V zhpu cersre Pnrfne fnynq!"), '\n')
+
+print("12 correct This is very funny and cool. Indeed!", correct("This is very funny and cool.Indeed!"), '\n')
+
+print("13 3ps brushes ", make_3sg_form("brush"), '\n')
+print("13 3ps tries ", make_3sg_form("try"), '\n')
+print("13 3ps runs ", make_3sg_form("run"), '\n')
+print("13 3ps fixes ", make_3sg_form("fix"), '\n')
+
+print("14 ing lying ", make_ing_form("lie"), '\n')
+print("14 ing seeing ", make_ing_form("see"), '\n')
+print("14 ing moving ", make_ing_form("move"), '\n')
+print("14 ing hugging ", make_ing_form("hug"), '\n')
